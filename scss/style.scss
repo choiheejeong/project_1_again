@@ -19,8 +19,6 @@ header{
     align-items:center;
     li{display:inline-block;}
 
-    .logo h1{margin-top:10px;}
-
     #gnb{
     li{margin-right:50px;}
     li:last-child{margin-right:0;}
@@ -84,7 +82,7 @@ header{
   }
   .news_slide{
     overflow:hidden;
-    float:right; width:57vw;
+    float:right; width:58.5vw;
     .prev{position:absolute; top:95px; right:150px; cursor:pointer;}
     .next{position:absolute; top:95px; right:110px; cursor:pointer;}
     .swiper{width:100%;}
@@ -122,8 +120,12 @@ header{
         .pop_title{margin-top:55px;
          h3{font-size:25px; font-weight:bold; margin-bottom:20px;}
         }
+        .swiper ul{display:flex;
+         li{box-sizing:border-box;} 
+        }
+        .swiper_inner{width:41vw; overflow:hidden;}
         .banner{margin-right:50px;
-         img{width:37vw; height:223px; border-radius:20px;}
+         li img{border-radius:20px;}
         }//e:.banner
         .employ{width:17.3vw; background:#f7f7f5;
             border:1px solid #d2d3ce; border-radius:0 20px 0 20px;
@@ -165,7 +167,24 @@ header{
     em{letter-spacing:2px; color:#454545; font-size:15px;}
     pre{margin-left:40px; margin-top:140px; line-height:1.6;
         font-size:17px;}
-    p{margin:140px 0 0 40px; color:#919191;}
+    //주요사업 icon
+    p{margin:140px 0 0 40px; color:#919191; transition:all .4s;}
+    p.drone::before{content:''; display:block; background:url('../img/icon_1.png') no-repeat;
+     width:70px; height:44px; position:absolute; top:55px; left:14px;}
+    p.smart::before{content:''; display:block; background:url('../img/icon_3.png') no-repeat;
+    width:37px; height:58px; position:absolute; top:45px; left:32px;}
+    p.seed::before{content:''; display:block; background:url('../img/icon_2.png') no-repeat;
+    width:70px; height:44px; position:absolute; top:55px; left:14px;}
+    p.venture::before{content:''; display:block; background:url('../img/icon_4.png') no-repeat;
+    width:50px; height:46px; position:absolute; top:53px; left:25px;}
+    p.drone::after{content:''; display:block; background:url('../img/icon_hover1.png') no-repeat;
+    width:174px; height:150px; position:absolute; bottom:30px; right:20px;}
+    p.smart::after{content:''; display:block; background:url('../img/icon_hover3.png') no-repeat;
+    width:174px; height:167px; position:absolute; bottom:30px; right:0;}
+    p.seed::after{content:''; display:block; background:url('../img/icon_hover2.png') no-repeat;
+    width:174px; height:170px; position:absolute; bottom:30px; right:20px;}
+    p.venture::after{content:''; display:block; background:url('../img/icon_hover4.png') no-repeat;
+    width:174px; height:167px; position:absolute; bottom:30px; right:10px;}
     li.one{margin-top:60px;}
     li.four{margin-top:-60px;}
     li::before{content:''; width:100px; height:70px; background:#b6ce60;
@@ -174,13 +193,18 @@ header{
         position:absolute; top:0; right:0px; z-index:5;
         background:url('../img/memo.png') no-repeat center 50%;
         opacity:0;}
+
+    //li hover
     li:hover::after{opacity:1;}
     li:hover{background:#47511d; border-radius:20px 50px 20px 20px;}
     li:hover pre{color:#fff; margin-top:60px;}
     li:hover p{color:#fff; margin-top:220px;}
     li:hover em{color:#b7baa9;}
     li:hover::before{display:none;}
+    li:hover p::before{display:none;}
     }//end:.busi_list
+    .uni_uni{background:url('../img/uni_love.png') no-repeat;
+      width:287px; height:395px; position:absolute; bottom:50px; left:30%;}
 }//end:#business
 
 
@@ -190,10 +214,12 @@ header{
   .inner{padding:100px; display:flex; justify-content:space-between;}
   .blog{width:700px; height:488px; background:#f7f7f5;
     border-radius:20px; display:flex; align-items:flex-end;
-    position:relative;}
+    position:relative; overflow:hidden;}
   .blog_banner{width:490px; height:100%;
     border-radius:20px 0 0 20px;
     img{border-radius:20px 0 0 20px;}
+    .prev{position:absolute; top:50px; right:150px; cursor:pointer;}
+    .next{position:absolute; top:0px; right:110px; cursor:pointer;}
   }//end:.blog_banner
   .blog_ment{
     margin:0 0 44px 37px; line-height:1.4; font-size:18px;
@@ -201,7 +227,7 @@ header{
   }
   .blog_ment::before{content:''; display:block; width:74px; height:63px;
     background:url('../img/blog_icon1.png') no-repeat;
-    position:absolute; top:5px; right:2px; z-index:5; cursor:pointer;
+    position:absolute; top:10px; right:8px; z-index:5; cursor:pointer;
     }
   .blog_ment::after{content:''; display:block; width:104px; height:97px;
     background:#b6cd61; position:absolute; top:-10px; right:-10px;
@@ -219,17 +245,20 @@ header{
 
 
 #koat{
- height:1082px; background:url('../img/hand.jpg');
+ height:1082px; margin-top:50px; background:url('../img/koat_bg.png') no-repeat;
  background-size:cover;
- margin-top:50px;
  display:flex; justify-content:space-around;
  flex-direction:column;
- .quick_gnb{width:90%; height:264px;
-    background:#fff; opacity:0.5; border-radius:0 20px 20px 0;
+ .quick_gnb{width:90%; height:264px; padding-left:100px;
+    background:rgba(0,0,0,.3); border-radius:0 20px 20px 0;
     ul{display:flex; justify-content:space-around;
-    align-items:center; height:100%;
+    align-items:center; height:100%;}
+    li{text-align:center; color:#fff; font-size:18px; font-weight:bold;}
+    li:first-child{font-size:23px; font-weight:bold; color:#fff;
+      line-height:1.5; text-align:left;}
+    span{width:95px; height:95px; display:block; background:#fff;
+      border-radius:50px; margin-bottom:20px;}
  }//end:.quick_gnb
- }
  .koat_ment{height:250px;
     padding:0 100px; color:#fff;
     ul{display:flex; justify-content:space-between;}

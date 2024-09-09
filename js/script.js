@@ -7,7 +7,7 @@ var sgc1 = new ScrollGiveClass("header",{
 const swiper1 = new Swiper('.news_slide .swiper', {
     loop: true,
     slidesPerView: 3,
-    spaceBetween: 57,
+    spaceBetween: 61,
 
     // Navigation arrows
     navigation: {
@@ -16,6 +16,17 @@ const swiper1 = new Swiper('.news_slide .swiper', {
   },
 
   });
+
+
+//팝업 슬라이드
+const swiper2 = new Swiper('.banner', {
+    loop:true,
+    spaceBetween: 50,
+    autoplay: { 
+        delay: 2500,
+    },
+});
+
 
   
  //주요사업
@@ -37,4 +48,15 @@ busi.forEach(function(item,i){
         bg.style.backgroundImage = "url(img/hand.jpg)";
     });
     
+});
+
+
+//블로그
+const swiper3 = new Swiper('.blog_banner', {
+    loop:true,
+
+    navigation: {
+        nextEl: '.next',
+        prevEl: '.prev',
+      },
 });

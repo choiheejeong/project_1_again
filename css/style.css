@@ -34,9 +34,6 @@ header .top_layout {
 header .top_layout li {
   display: inline-block;
 }
-header .top_layout .logo h1 {
-  margin-top: 10px;
-}
 header .top_layout #gnb li {
   margin-right: 50px;
 }
@@ -179,7 +176,7 @@ header.scrolled li {
 #notice .news_slide {
   overflow: hidden;
   float: right;
-  width: 57vw;
+  width: 58.5vw;
 }
 #notice .news_slide .prev {
   position: absolute;
@@ -291,12 +288,20 @@ header.scrolled li {
   font-weight: bold;
   margin-bottom: 20px;
 }
+#notice .pop_up .swiper ul {
+  display: flex;
+}
+#notice .pop_up .swiper ul li {
+  box-sizing: border-box;
+}
+#notice .pop_up .swiper_inner {
+  width: 41vw;
+  overflow: hidden;
+}
 #notice .pop_up .banner {
   margin-right: 50px;
 }
-#notice .pop_up .banner img {
-  width: 37vw;
-  height: 223px;
+#notice .pop_up .banner li img {
   border-radius: 20px;
 }
 #notice .pop_up .employ {
@@ -404,6 +409,87 @@ header.scrolled li {
 #business .busi_list p {
   margin: 140px 0 0 40px;
   color: #919191;
+  transition: all 0.4s;
+}
+#business .busi_list p.drone::before {
+  content: "";
+  display: block;
+  background: url("../img/icon_1.png") no-repeat;
+  width: 70px;
+  height: 44px;
+  position: absolute;
+  top: 55px;
+  left: 14px;
+}
+#business .busi_list p.smart::before {
+  content: "";
+  display: block;
+  background: url("../img/icon_3.png") no-repeat;
+  width: 37px;
+  height: 58px;
+  position: absolute;
+  top: 45px;
+  left: 32px;
+}
+#business .busi_list p.seed::before {
+  content: "";
+  display: block;
+  background: url("../img/icon_2.png") no-repeat;
+  width: 70px;
+  height: 44px;
+  position: absolute;
+  top: 55px;
+  left: 14px;
+}
+#business .busi_list p.venture::before {
+  content: "";
+  display: block;
+  background: url("../img/icon_4.png") no-repeat;
+  width: 50px;
+  height: 46px;
+  position: absolute;
+  top: 53px;
+  left: 25px;
+}
+#business .busi_list p.drone::after {
+  content: "";
+  display: block;
+  background: url("../img/icon_hover1.png") no-repeat;
+  width: 174px;
+  height: 150px;
+  position: absolute;
+  bottom: 30px;
+  right: 20px;
+}
+#business .busi_list p.smart::after {
+  content: "";
+  display: block;
+  background: url("../img/icon_hover3.png") no-repeat;
+  width: 174px;
+  height: 167px;
+  position: absolute;
+  bottom: 30px;
+  right: 0;
+}
+#business .busi_list p.seed::after {
+  content: "";
+  display: block;
+  background: url("../img/icon_hover2.png") no-repeat;
+  width: 174px;
+  height: 170px;
+  position: absolute;
+  bottom: 30px;
+  right: 20px;
+}
+#business .busi_list p.venture::after {
+  content: "";
+  display: block;
+  background: url("../img/icon_hover4.png") no-repeat;
+  width: 174px;
+  height: 167px;
+  position: absolute;
+  bottom: 30px;
+  right: 10px;
 }
 #business .busi_list li.one {
   margin-top: 60px;
@@ -454,6 +540,17 @@ header.scrolled li {
 #business .busi_list li:hover::before {
   display: none;
 }
+#business .busi_list li:hover p::before {
+  display: none;
+}
+#business .uni_uni {
+  background: url("../img/uni_love.png") no-repeat;
+  width: 287px;
+  height: 395px;
+  position: absolute;
+  bottom: 50px;
+  left: 30%;
+}
 
 #sns h2 {
   font-size: 50px;
@@ -474,6 +571,7 @@ header.scrolled li {
   display: flex;
   align-items: flex-end;
   position: relative;
+  overflow: hidden;
 }
 #sns .blog_banner {
   width: 490px;
@@ -482,6 +580,18 @@ header.scrolled li {
 }
 #sns .blog_banner img {
   border-radius: 20px 0 0 20px;
+}
+#sns .blog_banner .prev {
+  position: absolute;
+  top: 50px;
+  right: 150px;
+  cursor: pointer;
+}
+#sns .blog_banner .next {
+  position: absolute;
+  top: 0px;
+  right: 110px;
+  cursor: pointer;
 }
 #sns .blog_ment {
   margin: 0 0 44px 37px;
@@ -499,8 +609,8 @@ header.scrolled li {
   height: 63px;
   background: url("../img/blog_icon1.png") no-repeat;
   position: absolute;
-  top: 5px;
-  right: 2px;
+  top: 10px;
+  right: 8px;
   z-index: 5;
   cursor: pointer;
 }
@@ -549,9 +659,9 @@ header.scrolled li {
 
 #koat {
   height: 1082px;
-  background: url("../img/hand.jpg");
-  background-size: cover;
   margin-top: 50px;
+  background: url("../img/koat_bg.png") no-repeat;
+  background-size: cover;
   display: flex;
   justify-content: space-around;
   flex-direction: column;
@@ -559,8 +669,8 @@ header.scrolled li {
 #koat .quick_gnb {
   width: 90%;
   height: 264px;
-  background: #fff;
-  opacity: 0.5;
+  padding-left: 100px;
+  background: rgba(0, 0, 0, 0.3);
   border-radius: 0 20px 20px 0;
 }
 #koat .quick_gnb ul {
@@ -568,6 +678,27 @@ header.scrolled li {
   justify-content: space-around;
   align-items: center;
   height: 100%;
+}
+#koat .quick_gnb li {
+  text-align: center;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+}
+#koat .quick_gnb li:first-child {
+  font-size: 23px;
+  font-weight: bold;
+  color: #fff;
+  line-height: 1.5;
+  text-align: left;
+}
+#koat .quick_gnb span {
+  width: 95px;
+  height: 95px;
+  display: block;
+  background: #fff;
+  border-radius: 50px;
+  margin-bottom: 20px;
 }
 #koat .koat_ment {
   height: 250px;
