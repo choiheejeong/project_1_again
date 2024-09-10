@@ -56,7 +56,27 @@ const swiper3 = new Swiper('.blog_banner', {
     loop:true,
 
     navigation: {
-        nextEl: '.next',
-        prevEl: '.prev',
+        nextEl: '.b_next',
+        prevEl: '.b_prev',
       },
 });
+
+
+//유튜브
+const swiper4 = new Swiper('.youtube', {
+    direction: 'vertical',
+    loop:true,
+    autoplay: { 
+        delay: 3000,
+    },
+
+    navigation: {
+        nextEl: '.y_next',
+        prevEl: '.y_prev',
+      },
+});
+
+
+
+/*EzenScroll 플러그인 호출*/
+let goTop = new EzenScroll(".gotoTop");
