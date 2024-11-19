@@ -15,6 +15,10 @@ const swiper1 = new Swiper('.news_slide .swiper', {
     prevEl: '.prev',
   },
 
+  breakpoints:{
+    1600:{slidesPerView:2, spaceBetween:35},
+  }
+
   });
 
 
@@ -44,9 +48,6 @@ busi.forEach(function(item,i){
         bg.style.backgroundImage = images[i];
     });
     
-    item.addEventListener("mouseout",function(){
-        bg.style.backgroundImage = "url(img/hand.jpg)";
-    });
     
 });
 
